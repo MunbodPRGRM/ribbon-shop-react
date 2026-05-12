@@ -1,6 +1,7 @@
 # Ribbon Handmade Shop
 
-เว็บไซต์แสดงผลงานและร้านค้าสำหรับงานริบบิ้น Handmade สร้างด้วย React + Vite + Firebase
+เว็บไซต์แสดงผลงานและร้านค้าสำหรับงานริบบิ้น Handmade สร้างด้วย React + Vite + Firebase + Cloundinary
+สามารถดูตัวอย่างโปรเจกต์ได้ที่นี่ : [Ribbon Shop Web](https://ribbon-shop.web.app/)
 
 ---
 
