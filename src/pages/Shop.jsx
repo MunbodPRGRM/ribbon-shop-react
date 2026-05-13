@@ -9,10 +9,14 @@ import ProductCard
 import { getProducts }
   from "../firebase/firestore"
 
+import Loading from "../components/Loading"
+ 
 function Shop() {
 
   const [products, setProducts]
     = useState([])
+  
+  const [loading, setLoading] = useState(true)
 
   const [search, setSearch]
     = useState("")
@@ -30,6 +34,8 @@ function Shop() {
       const data = await getProducts()
 
       setProducts(data)
+
+      setLoading(false)
     }
 
     loadProducts()
@@ -73,6 +79,11 @@ function Shop() {
 
       return 0
     })
+
+  if (loading) {
+
+    return <Loading />
+  }
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-20">

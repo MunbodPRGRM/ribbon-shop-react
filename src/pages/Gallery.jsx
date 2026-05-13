@@ -6,6 +6,8 @@ import {
 import { getProducts }
   from "../firebase/firestore"
 
+import Loading from "../components/Loading"
+
 function Gallery() {
 
   const [products, setProducts]
@@ -14,6 +16,8 @@ function Gallery() {
   const [category, setCategory]
     = useState("ทั้งหมด")
 
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
 
     async function loadProducts() {
@@ -21,6 +25,8 @@ function Gallery() {
       const data = await getProducts()
 
       setProducts(data)
+
+      setLoading(false)
     }
 
     loadProducts()
@@ -41,6 +47,11 @@ function Gallery() {
       )
     }
   )
+
+  if (loading) {
+
+    return <Loading />
+  }
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-20">

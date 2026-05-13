@@ -6,6 +6,8 @@ import {
 
 import { useParams } from "react-router-dom"
 
+import Loading from "../components/Loading"
+
 import { getProductById }
   from "../firebase/firestore"
 
@@ -37,16 +39,7 @@ function ProductDetail() {
 
   if (!product) {
 
-    return (
-
-      <section className="py-20 text-center">
-
-        <h1 className="text-3xl font-bold">
-          กำลังโหลดสินค้า...
-        </h1>
-
-      </section>
-    )
+    return <Loading />
   }
 
   return (
