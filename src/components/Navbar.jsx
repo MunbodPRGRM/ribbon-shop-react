@@ -201,25 +201,6 @@ function Navbar() {
               }
 
               <Link
-                to="/admin"
-
-                onClick={() =>
-                  setMenuOpen(false)
-                }
-
-                className="
-                bg-pink-500
-                text-white
-                px-5
-                py-3
-                rounded-full
-                text-center
-                "
-              >
-                Admin
-              </Link>
-
-              <Link
                 to="/cart"
 
                 onClick={() =>

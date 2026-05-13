@@ -78,73 +78,165 @@ function Shop() {
         ร้านค้า
       </h1>
 
-      <div className="bg-white p-6 rounded-3xl shadow mb-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div
+        className="
+        bg-white/90
+        backdrop-blur
+        p-6
+        md:p-8
+        rounded-4xl
+        shadow-xl
+        border
+        border-pink-100
+        mb-14
+        "
+      >
 
-        <input
-          type="text"
-
-          placeholder="ค้นหาสินค้า..."
-
-          value={search}
-
-          onChange={(event) =>
-            setSearch(event.target.value)
-          }
-
-          className="border rounded-xl px-4 py-3"
-        />
-
-        <select
-          value={category}
-
-          onChange={(event) =>
-            setCategory(event.target.value)
-          }
-
-          className="border rounded-xl px-4 py-3"
+        <div
+          className="
+          flex
+          flex-col
+          lg:flex-row
+          gap-5
+          "
         >
 
-          <option>
-            ทั้งหมด
-          </option>
+          <div
+            className="
+            relative
+            flex-1
+            "
+          >
 
-          <option>
-            โบว์
-          </option>
+            <span
+              className="
+              absolute
+              left-4
+              top-1/2
+              -translate-y-1/2
+              text-gray-400
+              text-lg
+              "
+            >
+              🔍
+            </span>
 
-          <option>
-            ของขวัญ
-          </option>
+            <input
+              type="text"
 
-          <option>
-            ตกแต่ง
-          </option>
+              placeholder="ค้นหาสินค้า handmade..."
 
-        </select>
+              value={search}
 
-        <select
-          value={sort}
+              onChange={(event) =>
+                setSearch(event.target.value)
+              }
 
-          onChange={(event) =>
-            setSort(event.target.value)
-          }
+              className="
+              w-full
+              bg-pink-50
+              border
+              border-pink-100
+              focus:border-pink-400
+              focus:ring-4
+              focus:ring-pink-100
+              outline-none
+              rounded-2xl
+              pl-12
+              pr-4
+              py-4
+              text-gray-700
+              placeholder:text-gray-400
+              transition-all
+              duration-300
+              "
+            />
 
-          className="border rounded-xl px-4 py-3"
-        >
+          </div>
 
-          <option value="default">
-            เรียงปกติ
-          </option>
+          <select
+            value={category}
 
-          <option value="low">
-            ราคาน้อย → มาก
-          </option>
+            onChange={(event) =>
+              setCategory(event.target.value)
+            }
 
-          <option value="high">
-            ราคามาก → น้อย
-          </option>
+            className="
+            bg-pink-50
+            border
+            border-pink-100
+            focus:border-pink-400
+            focus:ring-4
+            focus:ring-pink-100
+            outline-none
+            rounded-2xl
+            px-5
+            py-4
+            text-gray-700
+            transition-all
+            duration-300
+            min-w-45
+            "
+          >
 
-        </select>
+            <option>
+              ทั้งหมด
+            </option>
+
+            <option>
+              โบว์
+            </option>
+
+            <option>
+              ของขวัญ
+            </option>
+
+            <option>
+              ตกแต่ง
+            </option>
+
+          </select>
+
+          <select
+            value={sort}
+
+            onChange={(event) =>
+              setSort(event.target.value)
+            }
+
+            className="
+            bg-pink-50
+            border
+            border-pink-100
+            focus:border-pink-400
+            focus:ring-4
+            focus:ring-pink-100
+            outline-none
+            rounded-2xl
+            px-5
+            py-4
+            text-gray-700
+            transition-all
+            duration-300
+            min-w-55
+            "
+          >
+
+            <option value="default">
+              เรียงตามสินค้าแนะนำ
+            </option>
+
+            <option value="low">
+              ราคาน้อย → มาก
+            </option>
+
+            <option value="high">
+              ราคามาก → น้อย
+            </option>
+
+          </select>
+
+        </div>
 
       </div>
 
