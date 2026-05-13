@@ -200,6 +200,10 @@ function Shop() {
                 price={product.price}
 
                 image={product.image}
+
+                category={product.category}
+
+                description={product.description}
               />
 
             ))}

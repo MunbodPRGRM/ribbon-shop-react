@@ -2,29 +2,33 @@ import { Link } from "react-router-dom"
 import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
 
-function ProductCard({ id, name, price, image }) {
+function ProductCard({ id, name, price, image, category, description }) {
 
   const { addToCart } = useContext(CartContext)
 
   return (
-    <Link to={`/product/${id}`}>
+    <Link to={`/product/${id}`} className="group bg-white rounded-4xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
 
       <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
 
         <img
           src={image}
           alt={name}
-          className="w-full h-56 md:h-64 object-cover"
+          className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
         />
 
-        <div className="p-5">
+        <div className="p-6">
 
-          <h3 className="text-xl md:text-2xl font-bold mb-2">
+          <p className="text-sm text-pink-500 font-medium mb-2">
+            {category}
+          </p>
+
+          <h3 className="text-xl md:text-2xl font-bold mb-2 line-clamp-1">
             {name}
           </h3>
 
-          <p className="text-gray-600 mb-4">
-            งาน handmade สำหรับของขวัญสุดพิเศษ
+          <p className="text-gray-600 mb-4 line-clamp-1">
+            {description}
           </p>
 
           <div className="flex justify-between items-center">
