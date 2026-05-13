@@ -9,6 +9,7 @@ import Contact from "./pages/Contact"
 import ProductDetail from "./pages/ProductDetail"
 import Cart from "./pages/Cart"
 import Admin from "./pages/Admin"
+import Footer from "./components/Footer"
 
 function App() {
 
@@ -36,6 +37,8 @@ function App() {
           <Route path="/admin" element={<Admin />} />
 
         </Routes>
+
+        <Footer />
 
       </div>
 

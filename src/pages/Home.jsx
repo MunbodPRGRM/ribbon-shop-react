@@ -23,7 +23,7 @@ function Home() {
           className="
           absolute
           inset-0
-          bg-gradient-to-br
+          bg-linear-to-br
           from-pink-50
           via-white
           to-pink-100
