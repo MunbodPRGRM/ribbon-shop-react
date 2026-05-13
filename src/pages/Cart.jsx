@@ -1,6 +1,7 @@
 import { useContext } from "react"
 
 import { CartContext } from "../context/CartContext"
+import EmptyState from "../components/EmptyState"
 
 function Cart() {
 
@@ -17,6 +18,27 @@ function Cart() {
 
     0
   )
+
+  if (cartItems.length === 0) {
+
+    return (
+
+      <EmptyState
+
+        title="ตะกร้าสินค้าว่าง"
+
+        description="
+        ยังไม่มีสินค้าในตะกร้า
+        ลองเลือกสินค้าสวย ๆ
+        จากร้านค้าของเรา
+        "
+
+        buttonText="เลือกซื้อสินค้า"
+
+        buttonLink="/shop"
+      />
+    )
+  }
 
   return (
     <section className="max-w-4xl mx-auto px-6 py-20">

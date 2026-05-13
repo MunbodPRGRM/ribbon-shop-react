@@ -10,6 +10,8 @@ import { getProducts }
   from "../firebase/firestore"
 
 import Loading from "../components/Loading"
+
+import EmptyState from "../components/EmptyState"
  
 function Shop() {
 
@@ -162,25 +164,50 @@ function Shop() {
 
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        filteredProducts.length === 0 && (
 
-        {filteredProducts.map((product) => (
+          <EmptyState
 
-          <ProductCard
-            key={product.id}
+            title="ไม่พบสินค้า"
 
-            id={product.id}
+            description="
+            ลองค้นหาด้วยคำอื่น
+            หรือเลือกหมวดหมู่อื่น
+            "
 
-            name={product.name}
+            buttonText="กลับหน้าร้าน"
 
-            price={product.price}
-
-            image={product.image}
+            buttonLink="/shop"
           />
+        )
+      }
 
-        ))}
+      {
+        filteredProducts.length > 0 && (
 
-      </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            {filteredProducts.map((product) => (
+
+              <ProductCard
+                key={product.id}
+
+                id={product.id}
+
+                name={product.name}
+
+                price={product.price}
+
+                image={product.image}
+              />
+
+            ))}
+
+          </div>
+          
+        )
+      }
 
     </section>
   )
