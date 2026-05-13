@@ -100,22 +100,6 @@ function Navbar() {
             }
 
             <Link
-              to="/admin"
-
-              className="
-              bg-pink-500
-              hover:bg-pink-600
-              transition
-              text-white
-              px-5
-              py-2
-              rounded-full
-              "
-            >
-              Admin
-            </Link>
-
-            <Link
               to="/cart"
 
               className="
