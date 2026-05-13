@@ -12,6 +12,7 @@ import { getProducts }
 import Loading from "../components/Loading"
 
 import EmptyState from "../components/EmptyState"
+import Section from "../components/Section"
  
 function Shop() {
 

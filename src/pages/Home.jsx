@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-
 import Hero from "../components/Hero"
 import ProductCard from "../components/ProductCard"
-
 import { getProducts } from "../firebase/firestore"
+import Section from "../components/Section"
 
 function Home() {
 
