@@ -1,20 +1,15 @@
 import { useState } from "react"
-
 import { addProduct } from "../firebase/firestore"
 import { uploadImage } from "../utils/cloudinary"
+import toast from "react-hot-toast"
 
 function Admin() {
 
   const [name, setName] = useState("")
-
   const [price, setPrice] = useState("")
-
   const [image, setImage] = useState("")
-
   const [file, setFile] = useState(null)
-
   const [description, setDescription] = useState("")
-    
   const [category, setCategory] = useState("")
 
   async function handleSubmit(event) {
@@ -38,9 +33,16 @@ function Admin() {
       
     }
 
-    await addProduct(newProduct)
+    try {
 
-    alert("เพิ่มสินค้าสำเร็จ")
+      await addProduct(newProduct)
+
+      toast.success("เพิ่มสินค้าเรียบร้อย")
+      
+    } catch (error) {
+
+      toast.error("เกิดข้อผิดพลาดในการเพิ่มสินค้า")
+    }
 
     setName("")
     setPrice("")

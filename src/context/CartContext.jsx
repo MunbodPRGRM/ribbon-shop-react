@@ -1,8 +1,5 @@
-import {
-  createContext,
-  useState,
-  useEffect,
-} from "react"
+import {createContext, useState, useEffect, } from "react"
+import toast from "react-hot-toast"
 
 export const CartContext = createContext()
 
@@ -60,6 +57,8 @@ function CartProvider({ children }) {
         },
       ])
     }
+
+    toast.success("เพิ่มสินค้าลงตะกร้าแล้ว")
   }
 
   function removeFromCart(id) {
@@ -69,6 +68,7 @@ function CartProvider({ children }) {
     )
 
     setCartItems(updatedCart)
+    toast.success("ลบสินค้าออกจากตะกร้าแล้ว")
   }
 
   return (

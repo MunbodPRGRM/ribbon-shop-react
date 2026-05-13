@@ -1,27 +1,14 @@
-import {
-  useEffect,
-  useState,
-  useContext,
-} from "react"
-
+import { useEffect, useState, useContext, } from "react"
 import { useParams } from "react-router-dom"
-
 import Loading from "../components/Loading"
-
-import { getProductById }
-  from "../firebase/firestore"
-
-import { CartContext }
-  from "../context/CartContext"
+import { getProductById } from "../firebase/firestore"
+import { CartContext } from "../context/CartContext"
 
 function ProductDetail() {
 
   const { id } = useParams()
-
   const [product, setProduct] = useState(null)
-
-  const { addToCart } =
-    useContext(CartContext)
+  const { addToCart } = useContext(CartContext)
 
   useEffect(() => {
 
@@ -76,7 +63,7 @@ function ProductDetail() {
           </p>
 
           <button
-            onClick={() => addToCart(product)}
+            onClick={() => addToCart(product)} 
             className="bg-pink-400 hover:bg-pink-500 transition text-white px-8 py-4 rounded-xl text-lg"
           >
             เพิ่มลงตะกร้า
