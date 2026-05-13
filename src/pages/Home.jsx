@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 import Hero from "../components/Hero"
 import ProductCard from "../components/ProductCard"
@@ -7,49 +8,183 @@ import { getProducts } from "../firebase/firestore"
 
 function Home() {
 
-  const [products, setProducts] = useState([])
-
-  useEffect(() => {
-
-    async function loadProducts() {
-
-      const data = await getProducts()
-
-      setProducts(data)
-    }
-
-    loadProducts()
-
-  }, [])
-
   return (
-    <>
-      <Hero />
 
-      <section className="max-w-6xl mx-auto px-6 py-20">
+    <main>
 
-        <h2 className="text-4xl font-bold mb-10 text-center">
-          สินค้าแนะนำ
-        </h2>
+      <section
+        className="
+        relative
+        overflow-hidden
+        "
+      >
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          className="
+          absolute
+          inset-0
+          bg-gradient-to-br
+          from-pink-50
+          via-white
+          to-pink-100
+          -z-10
+          "
+        />
 
-          {products.map((product) => (
+        <div
+          className="
+          max-w-7xl
+          mx-auto
+          px-6
+          py-24
+          md:py-32
+          grid
+          grid-cols-1
+          lg:grid-cols-2
+          gap-16
+          items-center
+          "
+        >
 
-            <ProductCard
-              key={product.id}
-              id={product.id}
-              name={product.name}
-              price={product.price}
-              image={product.image}
+          <div>
+
+            <p
+              className="
+              text-pink-500
+              font-semibold
+              uppercase
+              tracking-[0.3em]
+              mb-6
+              "
+            >
+              Handmade Ribbon Design
+            </p>
+
+            <h1
+              className="
+              text-5xl
+              md:text-7xl
+              font-bold
+              leading-tight
+              text-gray-800
+              mb-8
+              "
+            >
+
+              งานริบบิ้น Handmade
+              ที่ออกแบบด้วยความตั้งใจ
+
+            </h1>
+
+            <p
+              className="
+              text-lg
+              md:text-xl
+              text-gray-600
+              leading-relaxed
+              mb-10
+              "
+            >
+
+              รวมผลงานริบบิ้น handmade
+              และของขวัญสุดพิเศษ
+              ที่สร้างขึ้นอย่างประณีต
+              เพื่อมอบความรู้สึกดี ๆ
+              ให้กับทุกโอกาสสำคัญ
+
+            </p>
+
+            <div
+              className="
+              flex
+              flex-wrap
+              gap-4
+              "
+            >
+
+              <Link
+                to="/gallery"
+
+                className="
+                bg-pink-500
+                hover:bg-pink-600
+                transition
+                text-white
+                px-8
+                py-4
+                rounded-full
+                text-lg
+                font-medium
+                shadow-lg
+                "
+              >
+                ดูผลงาน
+              </Link>
+
+              <Link
+                to="/shop"
+
+                className="
+                border
+                border-pink-300
+                hover:bg-pink-50
+                transition
+                text-pink-500
+                px-8
+                py-4
+                rounded-full
+                text-lg
+                font-medium
+                "
+              >
+                เลือกซื้อสินค้า
+              </Link>
+
+            </div>
+
+          </div>
+
+          <div
+            className="
+            relative
+            "
+          >
+
+            <div
+              className="
+              absolute
+              -top-10
+              -left-10
+              w-40
+              h-40
+              bg-pink-200
+              rounded-full
+              blur-3xl
+              opacity-40
+              "
             />
 
-          ))}
+            <img
+              src="https://images.unsplash.com/photo-1606695793797-2b2bd6a1a018?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+              alt="Ribbon Handmade"
+
+              className="
+              relative
+              rounded-[3rem]
+              shadow-2xl
+              w-full
+              object-cover
+              "
+            />
+
+          </div>
 
         </div>
 
       </section>
-    </>
+
+    </main>
   )
 }
 
