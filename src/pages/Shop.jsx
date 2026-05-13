@@ -1,34 +1,17 @@
-import {
-  useEffect,
-  useState,
-} from "react"
-
-import ProductCard
-  from "../components/ProductCard"
-
-import { getProducts }
-  from "../firebase/firestore"
-
+import { useEffect, useState, } from "react"
+import ProductCard from "../components/ProductCard"
+import { getProducts } from "../firebase/firestore"
 import Loading from "../components/Loading"
-
 import EmptyState from "../components/EmptyState"
 import Section from "../components/Section"
  
 function Shop() {
 
-  const [products, setProducts]
-    = useState([])
-  
+  const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
-
-  const [search, setSearch]
-    = useState("")
-
-  const [category, setCategory]
-    = useState("ทั้งหมด")
-
-  const [sort, setSort]
-    = useState("default")
+  const [search, setSearch] = useState("")
+  const [category, setCategory] = useState("ทั้งหมด")
+  const [sort, setSort] = useState("default")
 
   useEffect(() => {
 

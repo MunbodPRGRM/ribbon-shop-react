@@ -87,7 +87,7 @@ function Navbar() {
 
                       :
 
-                      "hover:text-pink-500"
+                      "hover:text-pink-500 relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-pink-500 after:transition-all after:duration-300 hover:after:w-full"
                     }
                     `
                   }

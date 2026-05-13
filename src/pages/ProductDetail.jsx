@@ -64,7 +64,7 @@ function ProductDetail() {
 
           <button
             onClick={() => addToCart(product)} 
-            className="bg-pink-400 hover:bg-pink-500 transition text-white px-8 py-4 rounded-xl text-lg"
+            className="bg-pink-400 hover:bg-pink-500 transition-all duration-300 ease-out hover:scale-105 active:scale-95 text-white px-8 py-4 rounded-xl text-lg"
           >
             เพิ่มลงตะกร้า
           </button>

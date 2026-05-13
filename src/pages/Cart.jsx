@@ -74,7 +74,7 @@ function Cart() {
 
             <button
               onClick={() => removeFromCart(item.id)}
-              className="bg-red-400 hover:bg-red-500 text-white px-4 py-2 rounded-lg"
+              className="bg-red-400 hover:bg-red-500 text-white px-4 py-2 rounded-lg transition-all duration-300 ease-out hover:scale-105 active:scale-95"
             >
               ลบสินค้า
             </button>

@@ -107,7 +107,11 @@ function Home() {
                 className="
                 bg-pink-500
                 hover:bg-pink-600
-                transition
+                transition-all
+                duration-300
+                ease-out
+                hover:scale-105
+                active:scale-95
                 text-white
                 px-8
                 py-4
@@ -127,7 +131,11 @@ function Home() {
                 border
                 border-pink-300
                 hover:bg-pink-50
-                transition
+                transition-all
+                duration-300
+                ease-out
+                hover:scale-105
+                active:scale-95
                 text-pink-500
                 px-8
                 py-4
@@ -174,6 +182,11 @@ function Home() {
               shadow-2xl
               w-full
               object-cover
+              hover:scale-[1.02]
+              transition-all
+              duration-700
+              ease-out 
+              group
               "
             />
 

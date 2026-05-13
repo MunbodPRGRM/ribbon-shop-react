@@ -1,21 +1,11 @@
-import {
-  useEffect,
-  useState,
-} from "react"
-
-import { getProducts }
-  from "../firebase/firestore"
-
+import { useEffect, useState, } from "react"
+import { getProducts } from "../firebase/firestore"
 import Loading from "../components/Loading"
 
 function Gallery() {
 
-  const [products, setProducts]
-    = useState([])
-
-  const [category, setCategory]
-    = useState("ทั้งหมด")
-
+  const [products, setProducts] = useState([])
+  const [category, setCategory] = useState("ทั้งหมด")
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -80,7 +70,7 @@ function Gallery() {
             setCategory("ทั้งหมด")
           }
 
-          className={`px-6 py-3 rounded-full transition
+          className={`px-6 py-3 rounded-full transition-all duration-300 ease-out hover:scale-105 active:scale-95
 
           ${
             category === "ทั้งหมด"
@@ -102,7 +92,7 @@ function Gallery() {
             setCategory("โบว์")
           }
 
-          className={`px-6 py-3 rounded-full transition
+          className={`px-6 py-3 rounded-full transition-all duration-300 ease-out hover:scale-105 active:scale-95
 
           ${
             category === "โบว์"
@@ -124,7 +114,7 @@ function Gallery() {
             setCategory("ของขวัญ")
           }
 
-          className={`px-6 py-3 rounded-full transition
+          className={`px-6 py-3 rounded-full transition-all duration-300 ease-out hover:scale-105 active:scale-95
 
           ${
             category === "ของขวัญ"
@@ -146,7 +136,7 @@ function Gallery() {
             setCategory("ตกแต่ง")
           }
 
-          className={`px-6 py-3 rounded-full transition
+          className={`px-6 py-3 rounded-full transition-all duration-300 ease-out hover:scale-105 active:scale-95
 
           ${
             category === "ตกแต่ง"

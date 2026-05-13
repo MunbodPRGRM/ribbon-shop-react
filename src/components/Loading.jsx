@@ -21,6 +21,7 @@ function Loading() {
         border-t-pink-500
         rounded-full
         animate-spin
+        duration-700
         "
       />
 
